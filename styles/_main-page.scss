@@ -1,0 +1,452 @@
+html {
+  overflow: hidden;
+}
+
+body {
+  min-height: 100dvh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 70px;
+  position: relative;
+  @include responsive(phone) {
+    padding: 10px 50px;
+  }
+  @media screen and (max-height: 800px) {
+    height: auto;
+  }
+  .left-marquee {
+    max-width: 64px;
+    width: 100%;
+    height: 100dvh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background-color: $font-color;
+    position: fixed;
+    top: 0;
+    left: 0;
+    .left-marquee__inner {
+      width: 32px;
+      margin: 0 auto;
+      height: 100%;
+      .marquee__part {
+        img {
+          margin-bottom: 20px;
+        }
+      }
+    }
+    @include responsive(phone) {
+      max-width: 30px;
+      .left-marquee__inner {
+        width: 16px;
+        .marquee__part {
+          img {
+            width: 16px;
+            margin-bottom: 13px;
+            object-fit: cover;
+          }
+        }
+      }
+    }
+  }
+  .right-marquee {
+    max-width: 64px;
+    width: 100%;
+    height: 100dvh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background-color: $font-color;
+    position: fixed;
+    top: 0;
+    right: 0;
+    .right-marquee__inner {
+      width: 32px;
+      margin: 0 auto;
+      height: 100%;
+      img {
+        margin-bottom: 13px;
+      }
+    }
+    @include responsive(phone) {
+      max-width: 30px;
+      right: -2px;
+      .right-marquee__inner {
+        width: 16px;
+        .right-marquee__part {
+          width: 16px;
+          img {
+            width: 16px;
+          }
+        }
+      }
+    }
+  }
+
+  .main-section.blur {
+    filter: blur(4px);
+  }
+
+  .main-section {
+    max-width: 1440px;
+    width: 100%;
+    height: 80%;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    @media screen and (max-height: 630px) {
+      gap: 50px;
+    }
+    @media screen and (max-height: 630px) and (max-width: 1050px) {
+      gap: 40px;
+    }
+    .logo-wrapper {
+      padding: 5px 0;
+      display: grid;
+      place-items: center;
+      cursor: pointer;
+      img {
+        max-width: 411.23px;
+        width: 100%;
+        transition: all ease 0.5s;
+        @include responsive(phone) {
+          transition: all ease 0.5s;
+          max-width: 278px;
+          width: 100%;
+        }
+        @media screen and (max-height: 630px) and (max-width: 1050px) {
+          max-width: 278px;
+        }
+      }
+    }
+    .ortskhobila.disabled {
+      display: none;
+    }
+    .ortskhobila.active {
+      display: flex;
+    }
+
+    .ortskhobila {
+      max-width: 436px;
+      width: 100%;
+      position: relative;
+      display: grid;
+      place-items: center;
+      @media screen and (max-height: 730px) {
+        max-width: 356px;
+      }
+      @include responsive(phone) {
+        max-width: 356px;
+      }
+      @include responsive(mini_phone) {
+        margin-top: 70px;
+      }
+      .cookie {
+        max-width: 436px;
+        width: 100%;
+        cursor: pointer;
+        transition: 0.5s all ease;
+        &:hover {
+          transform: scale(1.03);
+          transition: 0.5s all ease;
+        }
+        @media screen and (max-height: 630px) and (max-width: 1050px) {
+          max-width: 308px;
+        }
+      }
+      .price-tag {
+        position: absolute;
+        right: 0px;
+        top: 30%;
+        max-width: 151.4px;
+        width: 100%;
+        @include responsive(mini_phone) {
+          max-width: 108px;
+          height: 70px;
+          top: 15px;
+          right: 5px;
+        }
+        @media screen and (max-height: 630px) and (max-width: 1050px) {
+          max-width: 108px;
+          right: 30px;
+        }
+      }
+    }
+    .click-text {
+      p {
+        font-family: "firaGo-light";
+        font-size: 20px;
+        font-style: italic;
+        font-weight: 200;
+        line-height: 29px;
+        letter-spacing: 0em;
+        text-align: center;
+        cursor: pointer;
+      }
+    }
+    .click-text.disabled {
+      display: none;
+    }
+    .social-wrap {
+      width: 90%;
+      display: flex;
+      justify-content: flex-start;
+      align-items: flex-start;
+      margin-top: 40px;
+      @media screen and (max-height: 730px) {
+        margin-top: 10px;
+      }
+      @include responsive(phone) {
+        justify-content: center;
+        .facebook {
+          a {
+            img {
+              width: 44px;
+              height: 44px;
+              @include responsive(mini_phone) {
+                width: 36px;
+                height: 36px;
+              }
+            }
+          }
+        }
+        .instagram {
+          a {
+            img {
+              width: 44px;
+              height: 44px;
+              @include responsive(mini_phone) {
+                width: 36px;
+                height: 36px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .popup-wrapper {
+    display: none;
+    max-width: 662px;
+    width: 100%;
+    height: 331px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 0 26px;
+    background-color: #fff;
+    border: solid 2px #000;
+    border-radius: 24px;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    z-index: 100;
+    @media only screen and (max-width: 780px) {
+      max-width: 500px;
+    }
+    @media only screen and (max-width: 570px) {
+      max-width: 322px;
+      min-height: 443px;
+    }
+    @media only screen and (max-width: 400px) {
+      max-width: 280px;
+      min-height: 443px;
+      padding: 0 13px;
+    }
+    @media only screen and (max-width: 340px) {
+      max-width: 200px;
+      min-height: 343px;
+      padding: 0 13px;
+    }
+    .download-button {
+      width: 168px;
+      height: 47px;
+      display: grid;
+      place-items: center;
+      font-family: "firaGo-medium";
+      font-size: 24px;
+      border: solid 2px #000;
+      border-radius: 15px;
+      margin-top: 44px;
+      cursor: pointer;
+      transition: 0.4s all ease;
+      &:hover {
+        background-color: #000;
+        color: #fff;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+      }
+      @media only screen and (max-width: 340px) {
+        width: 100px;
+        font-size: 14px;
+      }
+    }
+    .close {
+      align-self: flex-end;
+      cursor: pointer;
+      transition: 0.4s all ease;
+      .close-btn {
+        font-family: "firaGo-medium";
+        font-size: 26px;
+        font-weight: 400;
+        transition: all ease 0.3s;
+        &:hover {
+          color: red;
+        }
+      }
+    }
+
+    .select-format {
+      .instruction {
+        font-family: "firaGo-medium";
+        font-size: 24px;
+        margin-top: 14px;
+        @media only screen and (max-width: 340px) {
+          font-size: 17px;
+        }
+      }
+    }
+    .formats-wrap {
+      display: flex;
+      border: solid 2px #000;
+      border-radius: 24px;
+      margin-top: 25px;
+      transition: all ease 0.4s;
+      &:hover {
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+      }
+      @media only screen and (max-width: 780px) {
+        max-width: 450px;
+        width: 100%;
+        .format {
+          h4 {
+            font-size: 18px;
+          }
+        }
+        .format1 {
+          h4 {
+            font-size: 18px;
+          }
+        }
+      }
+      @include responsive(phone) {
+        max-width: 450px;
+        width: 100%;
+      }
+      @media only screen and (max-width: 570px) {
+        max-width: 343px;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .format {
+        width: 280px;
+        height: 77px;
+        display: grid;
+        place-items: center;
+        border-right: solid 2px #000;
+        border-radius: 20px 0 0 20px;
+        cursor: pointer;
+        transition: 0.4s all ease;
+
+        @media only screen and (max-width: 570px) {
+          width: 100%;
+          border-right: 0;
+          border-bottom: solid 2px #000;
+          border-radius: 21px 21px 0 0;
+        }
+        @media only screen and (max-width: 340px) {
+          height: 60px;
+        }
+        h4 {
+          font-family: "firaGo-regular";
+          font-size: 24px;
+          @media only screen and (max-width: 780px) {
+            font-size: 18px;
+          }
+          @include responsive(phone) {
+            font-size: 18px;
+          }
+          @media only screen and (max-width: 570px) {
+            font-size: 20px;
+          }
+          @media only screen and (max-width: 340px) {
+            font-size: 15px;
+          }
+        }
+        p {
+          font-family: "firaGo-light";
+          font-size: 15px;
+          @media only screen and (max-width: 570px) {
+            font-size: 13px;
+          }
+        }
+      }
+      .format.selected {
+        background-color: #000;
+        color: #fff;
+      }
+      .format1 {
+        width: 280px;
+        height: 77px;
+        display: grid;
+        place-items: center;
+        @media only screen and (max-width: 340px) {
+          height: 60px;
+        }
+        cursor: pointer;
+        border-radius: 0 20px 20px 0;
+        transition: 0.4s all ease;
+
+        @media only screen and (max-width: 570px) {
+          width: 100%;
+          border: 0;
+          border-radius: 0 0 21px 21px;
+        }
+        h4 {
+          font-family: "firaGo-regular";
+          font-size: 24px;
+          @media only screen and (max-width: 780px) {
+            font-size: 18px;
+          }
+          @include responsive(phone) {
+            font-size: 18px;
+          }
+          @media only screen and (max-width: 340px) {
+            font-size: 15px;
+          }
+        }
+        p {
+          font-family: "firaGo-light";
+          font-size: 15px;
+        }
+      }
+      .format1.selected {
+        background-color: #000;
+        color: #fff;
+      }
+    }
+  }
+  .popup-wrapper.active {
+    display: flex;
+    animation: 0.5s ease-in popup;
+  }
+
+  .overlay {
+    display: none;
+  }
+  .overlay.active {
+    width: 100%;
+    height: 100dvh;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+  }
+}
