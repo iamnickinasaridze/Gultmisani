@@ -104,6 +104,8 @@ let inEnglish = [
   "Life is a journey of discovery – explore, learn, and savor the adventure",
   "You are a masterpiece of the universe – embrace your brilliance and let it radiate",
 ];
+let currentLang = "ka"; // Standard-Sprache
+
 //!Variables for functions
 let randomNumber, word;
 let transferData = "";
@@ -207,15 +209,20 @@ function addNewSection() {
 }
 
 function displayMessage() {
-  randomNumber = Math.trunc(Math.random() * 50);
-  word = InGeorgia[randomNumber];
+  // Welches Array benutzen?
+  let quotesArray = currentLang === "en" ? inEnglish : InGeorgia;
+
+  randomNumber = Math.floor(Math.random() * quotesArray.length);
+  word = quotesArray[randomNumber];
+
   dinamicText.textContent = "";
-  dinamicText.textContent = typeText(dinamicText, word);
+  typeText(dinamicText, word);
   transferData = word;
   localStorage.setItem("randomMessage", transferData);
 }
 
-function typeText(el, txt, i = -1) {
+
+function typeText(el, txt, i = 0) {
   el.textContent += txt[i];
   if (i === txt.length - 1 || shouldStop) {
     return;
@@ -300,3 +307,48 @@ document.getElementById("download").addEventListener("click", function () {
     console.error("Select right resolution!");
   }
 });
+// ===== Language system (Step 2) =====
+
+const translations = {
+  ka: {
+    open_new: "გახსენი ახალი",
+    click_to_open: "დააკლიკე და გახსენი შენი ორცხობილა",
+    download: "გადმოწერე",
+    choose_format: "აირჩიე ფორმატი",
+    story_size: "სთორის ზომა",
+    square_size: "კვადრატული ზომა",
+    download_btn: "გადმოწერა"
+  },
+  en: {
+    open_new: "Open new",
+    click_to_open: "Click to open your cookie",
+    download: "Download",
+    choose_format: "Choose format",
+    story_size: "Story size",
+    square_size: "Square size",
+    download_btn: "Download"
+  }
+};
+
+function setLanguage(lang) {
+  currentLang = lang; // Sprache updaten
+
+  // Texte aktualisieren
+  document.querySelectorAll("[data-i18n]").forEach(el => {
+    const key = el.getAttribute("data-i18n");
+    el.textContent = translations[lang][key];
+  });
+
+  // Zitat sofort aktualisieren, falls schon angezeigt
+  if (!shouldStop) {
+    displayMessage();
+  }
+
+  // Sprache merken
+  localStorage.setItem("lang", lang);
+}
+
+
+// default language
+const savedLang = localStorage.getItem("lang") || "ka";
+setLanguage(savedLang);
