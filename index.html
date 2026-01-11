@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <div class="lang-switch">
+  <button onclick="setLanguage('ka')">KA</button>
+  <button onclick="setLanguage('en')">EN</button>
+</div>
+
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="robots" content="index,follow" />
@@ -83,15 +88,16 @@
           <div class="image-svg">
             <img src="./assets/images/arrowLeft.svg" alt="arrow-left" />
           </div>
-          <p>გახსენი ახალი</p>
+          <p data-i18n="open_new"></p>
         </div>
         <div class="cookie-meesage">
           <p class="message"></p>
         </div>
+<button class="print-btn" onclick="window.print()">Drucken</button>
 
-        <div class="download">
+        <div class="download" style="visibility: hidden;">
           <img src="./assets/images/download.svg" alt="download" />
-          <p>გადმოწერე</p>
+          <p data-i18n="download"></p>
         </div>
       </div>
       <div class="ortskhobila active">
@@ -107,7 +113,7 @@
         />
       </div>
       <div class="click-text active">
-        <p class="text">დააკლიკე და გახსენი შენი ორცხობილა</p>
+        <p class="text" data-i18n="click_to_open"></p>
       </div>
       <div class="social-wrap">
         <div class="facebook">
@@ -134,19 +140,19 @@
         <div class="close-btn">X</div>
       </div>
       <div class="select-format">
-        <h3 class="instruction">აირჩიე ფორმატი</h3>
+     <h3 class="instruction" data-i18n="choose_format"></h3>
       </div>
       <div class="formats-wrap">
         <div class="format">
-          <h4>სთორის ზომა</h4>
+          <h4 data-i18n="story_size"></h4>
           <p>1920x1080</p>
         </div>
         <div class="format1">
-          <h4>კვადრატული ზომა</h4>
+          <h4 data-i18n="square_size"></h4>
           <p>1200x1200</p>
         </div>
       </div>
-      <button id="download" class="download-button">გადმოწერა</button>
+       <button id="download" class="download-button">გადმოწერა</button>
     </div>
 
     <!--? Marquee Right  -->
