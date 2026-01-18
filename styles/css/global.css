@@ -1160,6 +1160,6 @@ body .overlay.active {
 
 /* QR-Code Bild */
 .qr-code-img {
-  width: 200px;             /* selbst anpassen */
-  height: 200px;            /* selbst anpassen */
+  width: 400px;             /* selbst anpassen */
+  height: 400px;            /* selbst anpassen */
 }
