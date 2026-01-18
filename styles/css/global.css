@@ -426,8 +426,15 @@ button {
 }
 @font-face {
   font-family: "Nika";
-  src: url(../../assets/fonts/Nika-Regular.ttf);
+  src: url(../../assets/fonts/GeoBold-Regular.ttf);   
 }
+@font-face {
+  font-family: "Nika"; 
+  src: url(../../assets/fonts/Eng_Bold-Regular.ttf) format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
 html {
   overflow: hidden;
 }
