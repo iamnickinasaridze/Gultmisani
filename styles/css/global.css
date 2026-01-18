@@ -1157,6 +1157,6 @@ body .overlay.active {
 }
 
 .qr-code-img {
-  width: 100px;   /* gleiche Größe wie Logo */
+  width: 70px;   /* gleiche Größe wie Logo */
   height: auto;   /* proportional skalieren */
 }
