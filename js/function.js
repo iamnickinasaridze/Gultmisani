@@ -107,8 +107,6 @@ let inEnglish = [
 let currentLang = "ka"; // Standard-Sprache
 
 //!Variables for functions
-const qrCode = document.querySelector('.qr-code');      // QR-Code Container
-const socialWrap = document.querySelector('.social-wrap'); // Social-Logos
 
 let randomNumber, word;
 let transferData = "";
@@ -138,6 +136,9 @@ const selectFormat2 = document.querySelector(".format1");
 const blurtSection = document.querySelector(".main-section.blur");
 const overlay = document.querySelector(".overlay");
 const logo = document.querySelector(".logo");
+const qrCode = document.querySelector('.qr-code');       // QR-Code Container
+const socialWrap = document.querySelector('.social-wrap'); // Social-Logos Container
+
 
 //!Event listeners
 ortskhobila.addEventListener("click", function () {
@@ -212,23 +213,25 @@ function addNewSection() {
 }
 
 function displayMessage() {
-  // Social-Logos ausblenden
-  if(socialWrap) socialWrap.style.display = 'none';
+  // Social-Logos nur **jetzt** ausblenden
+  if (socialWrap) socialWrap.style.display = 'none';
 
-  // QR-Code einblenden
-  if(qrCode) qrCode.style.display = 'block';
+  // QR-Code jetzt einblenden
+  if (qrCode) qrCode.style.display = 'flex';
 
-  // Welches Array benutzen?
+  // Zitat auswählen
   let quotesArray = currentLang === "en" ? inEnglish : InGeorgia;
-
   randomNumber = Math.floor(Math.random() * quotesArray.length);
   word = quotesArray[randomNumber];
 
+  // Zitat-Typing
   dinamicText.textContent = "";
   typeText(dinamicText, word);
+
   transferData = word;
   localStorage.setItem("randomMessage", transferData);
 }
+
 
 
 function typeText(el, txt, i = 0) {
