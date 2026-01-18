@@ -1150,13 +1150,13 @@ body .overlay.active {
   }
 }
 .qr-code {
-  margin-top: 70px;
+  margin-top: 20px;
   display: flex;
   justify-content: center;
 }
 
 .qr-code img {
-  width: 70px;  /* QR-Code Größe anpassen */
-  height: 70px;
+  width: 170px !important; /* QR-Code Größe anpassen */
+  height: 170px !important;
 }
 
