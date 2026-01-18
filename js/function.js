@@ -337,9 +337,9 @@ function setLanguage(lang) {
   const logo = document.getElementById('logo');
   if (logo) { // prüfen, ob Logo existiert
     if(lang === 'ka') {
-      logo.src = '../../assets/images/Logo.svg';      // Georgisch
+      logo.src = '../../assets/images/logo.svg';      // Georgisch
     } else if(lang === 'en') {
-      logo.src = '../../assets/images/Logo-en.svg';   // Englisch
+      logo.src = '../../assets/images/logo_eng.svg';  // Englisch
     }
   }
 
