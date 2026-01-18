@@ -1106,3 +1106,46 @@ body .overlay.active {
     opacity: 1;
   }
 }/*# sourceMappingURL=global.css.map */
+
+/* Sprachschalter oben rechts */
+.lang-switch {
+  position: fixed;       /* immer sichtbar */
+  top: 150px;             /* Abstand vom oberen Rand */
+  right: 150px;           /* Abstand vom rechten Rand */
+  display: flex;         /* Buttons nebeneinander */
+  gap: 10px;             /* Abstand zwischen Buttons */
+  padding: 5px 12px;
+  border-radius: 8px;
+  z-index: 2000;         /* über allen body .top-title/.left-title etc. */
+}
+
+.lang-switch button {
+  font-family: "firaGo-medium"; /* deine Schrift */
+  font-size: 14px;
+  color: #000000;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px 10px;
+  transition: 0.3s;
+}
+
+.lang-switch button:hover {
+  background-color: #fff;
+  color: #000;
+  border-radius: 5px;
+}
+
+/* Responsive für Handy / kleine Bildschirme */
+@media (max-width: 740px) {
+  .lang-switch {
+    top: 10px;
+    right: 10px;
+    gap: 5px;
+    padding: 3px 6px;
+  }
+  .lang-switch button {
+    font-size: 12px;
+    padding: 3px 6px;
+  }
+}
