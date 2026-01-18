@@ -164,7 +164,7 @@
 /* Logos exakt gleich groß, egal welche Version */
 .body .download-story .logo-wrapper .logo,
 body .main-section .logo-wrapper img {
-  width: 311.23px;    /* feste Breite wie georgisches Logo */
+  width: 111.23px;    /* feste Breite wie georgisches Logo */
   height: 172px;      /* feste Höhe wie georgisches Logo */
   object-fit: cover;  /* füllt Container, nicht verzerrt */
   transition: all ease 0.5s;
@@ -563,7 +563,7 @@ body .main-section .logo-wrapper {
 /* Logos exakt gleich groß, egal welche Version */
 .body .download-story .logo-wrapper .logo,
 body .main-section .logo-wrapper img {
-  width: 311.23px;    /* feste Breite wie georgisches Logo */
+  width: 111.23px;    /* feste Breite wie georgisches Logo */
   height: 172px;      /* feste Höhe wie georgisches Logo */
   object-fit: cover;  /* füllt Container, nicht verzerrt */
   transition: all ease 0.5s;
