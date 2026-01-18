@@ -1153,13 +1153,13 @@ body .overlay.active {
 .qr-code {
   position: absolute;       /* fixierte Position */
   left: 50%;                /* horizontal zentrieren */
-  bottom: 100px;            /* Abstand vom unteren Rand der main-section, änderbar */
+  bottom: 60px;            /* Abstand vom unteren Rand der main-section, änderbar */
   transform: translateX(-50%); /* zentrieren exakt */
   display: none;            /* zuerst versteckt */
 }
 
 /* QR-Code Bild */
 .qr-code-img {
-  width: 60px;             /* selbst anpassen */
-  height: 60px;            /* selbst anpassen */
+  width: 20px;             /* selbst anpassen */
+  height: 20px;            /* selbst anpassen */
 }
