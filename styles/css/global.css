@@ -1149,14 +1149,17 @@ body .overlay.active {
     padding: 3px 6px;
   }
 }
+/* QR-Code Container */
 .qr-code {
-  display: flex;
-  justify-content: center; /* horizontal zentrieren */
-  align-items: center;
-  margin-top: 20px;       /* Abstand zum Zitat */
+  position: absolute;       /* fixierte Position */
+  left: 50%;                /* horizontal zentrieren */
+  bottom: 100px;            /* Abstand vom unteren Rand der main-section, änderbar */
+  transform: translateX(-50%); /* zentrieren exakt */
+  display: none;            /* zuerst versteckt */
 }
 
+/* QR-Code Bild */
 .qr-code-img {
-  width: 20px;   /* gleiche Größe wie Logo */
-  height: auto;   /* proportional skalieren */
+  width: 120px;             /* selbst anpassen */
+  height: 120px;            /* selbst anpassen */
 }
