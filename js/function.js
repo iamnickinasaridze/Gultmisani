@@ -107,6 +107,9 @@ let inEnglish = [
 let currentLang = "ka"; // Standard-Sprache
 
 //!Variables for functions
+const qrCode = document.querySelector('.qr-code');      // QR-Code Container
+const socialWrap = document.querySelector('.social-wrap'); // Social-Logos
+
 let randomNumber, word;
 let transferData = "";
 let shouldStop = true;
@@ -209,6 +212,12 @@ function addNewSection() {
 }
 
 function displayMessage() {
+  // Social-Logos ausblenden
+  if(socialWrap) socialWrap.style.display = 'none';
+
+  // QR-Code einblenden
+  if(qrCode) qrCode.style.display = 'block';
+
   // Welches Array benutzen?
   let quotesArray = currentLang === "en" ? inEnglish : InGeorgia;
 
