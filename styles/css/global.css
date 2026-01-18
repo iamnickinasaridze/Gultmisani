@@ -1008,7 +1008,7 @@ body .overlay.active {
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  margin-top: 70px;
+  margin-top: 20px;
 }
 @media screen and (max-height: 630px) {
   .random-message .cookie-meesage {
