@@ -333,6 +333,16 @@ const translations = {
 function setLanguage(lang) {
   currentLang = lang; // Sprache updaten
 
+  // === Logo wechseln ===
+  const logo = document.getElementById('logo');
+  if (logo) { // prüfen, ob Logo existiert
+    if(lang === 'ka') {
+      logo.src = '../../assets/images/Logo.svg';      // Georgisch
+    } else if(lang === 'en') {
+      logo.src = '../../assets/images/Logo-en.svg';   // Englisch
+    }
+  }
+
   // Texte aktualisieren
   document.querySelectorAll("[data-i18n]").forEach(el => {
     const key = el.getAttribute("data-i18n");
@@ -347,7 +357,6 @@ function setLanguage(lang) {
   // Sprache merken
   localStorage.setItem("lang", lang);
 }
-
 
 // default language
 const savedLang = localStorage.getItem("lang") || "ka";
