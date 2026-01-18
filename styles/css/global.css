@@ -1153,7 +1153,7 @@ body .overlay.active {
 .qr-code {
   position: absolute;       /* fixierte Position */
   left: 50%;                /* horizontal zentrieren */
-  bottom: 0px;            /* Abstand vom unteren Rand der main-section, änderbar */
+  bottom: 1px;            /* Abstand vom unteren Rand der main-section, änderbar */
   transform: translateX(-50%); /* zentrieren exakt */
   display: none;            /* zuerst versteckt */
 }
