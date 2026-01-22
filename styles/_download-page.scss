@@ -169,7 +169,7 @@
       }
       .text {
         font-family: "Nika";
-        font-size: 64px;
+        font-size: 72px;
         font-weight: 400;
         line-height: 75px;
         text-align: center;
@@ -178,7 +178,7 @@
         &::before {
           content: "*";
           font-family: "Nika";
-          margin-right: 15px;
+          margin-right: 25px;
           color: red;
         }
         &::after {
